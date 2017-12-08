@@ -7,17 +7,20 @@ body {
 
 #board {
     border: 2px solid black;
+    background: green;    
     width: 500px;
     height: 500px;
 }
 
-h3 {
+#health {
     text-align: right;
     margin: 10px;
     font-size: 24px;   
+    color: white;
 }
 
-img {
+#monkey {
+    position: relative;
     margin-top: 50px;
 }
 

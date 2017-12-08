@@ -1,3 +1,4 @@
+var $picture = $('#monkey');
 var mario = new Tamagotchi('Mario', 'monkey');
 
 function Tamagotchi(name, kind) {
@@ -15,14 +16,21 @@ function Tamagotchi(name, kind) {
     }
     this.start = function() {
         that.interval = setInterval(function() {
-            that.health -= 5;
+            that.health -= 5;         
             updateScore()
+            bounceImage() 
             if (that.health <=0) {
                 clearInterval(that.interval);
-                $('#health').text('GAME OVER')
+                $('#health').text('GAME OVER');
             }
         }, 1000);
     }
+}
+
+function bounceImage() {
+    $picture.animate({ top: '+=50' }, 500, function() {
+        $picture.animate({ top: '-=50' }, 500);
+    });
 }
 
 function updateScore() {
